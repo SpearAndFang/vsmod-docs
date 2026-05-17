@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mod Configuration - Primitive Survival</title>
     <style>
-        body { background:#1a1a1a; color:#eee; font-family:'Segoe UI',Tahoma,sans-serif; margin:0; padding:40px; line-height:1.6; }
-        .container { max-width:900px; margin:0 auto; }
+        /* The Base Look */
+        body { background:#1e1e1e; color:#ccc; font-family:'Segoe UI',Tahoma,sans-serif; margin:0; padding:20px; line-height:1.4; }
+        .container { max-width:1000px; margin:0 auto; }
         
-        /* Orange Back Button */
-        .back-btn { display:inline-block; background:#e5981a; color:#000!important; padding:12px 24px; font-weight:bold; text-decoration:none; border-radius:3px; margin-bottom:30px; border:1px solid #c48216; cursor:pointer; }
-        .back-btn:hover { background:#f2a930; }
+        /* Fixed Return Button */
+        .back-btn { display:inline-block; background:#e5981a; color:#000!important; padding:10px 20px; font-weight:bold; text-decoration:none; border-radius:2px; margin-bottom:20px; border:1px solid #b37714; cursor:pointer; }
+        .back-btn:hover { background:#ffb340; }
 
-        /* Table Styling */
-        table { width:100%; border-collapse:collapse; background:#252525; border-left:4px solid #e5981a; box-shadow:0 4px 10px rgba(0,0,0,.4); }
-        th { background:#333; color:#e5981a; text-align:left; padding:12px; border-bottom:1px solid #444; font-size:1.1em; }
-        td { padding:10px 12px; border-bottom:1px solid #333; vertical-align:top; }
+        /* Restored Table Style */
+        table { width:100%; border-collapse:collapse; background:#1e1e1e; border-left:4px solid #e5981a; margin-top:10px; }
+        th { background:#2a2a2a; color:#e5981a; text-align:left; padding:12px; border-bottom:2px solid #333; font-size:15px; text-transform:uppercase; letter-spacing:1px; }
+        td { padding:8px 12px; border-bottom:1px solid #2a2a2a; vertical-align:top; font-size:14px; }
         
-        /* Colors for Key/Default/Description */
-        .key { color:#fff; font-weight:bold; font-family:monospace; }
-        .default { color:#ffad33; font-weight:bold; font-family:monospace; }
-        .desc { color:#ccc; }
+        /* Restored Row Colors */
+        .key { color:#e5981a; font-weight:bold; font-family:'Consolas',monospace; }
+        .default { color:#fff; font-family:monospace; background:#111; padding:2px 6px; border-radius:3px; }
+        .desc { color:#bbb; }
         
-        tr:hover { background:#2d2d2d; }
+        tr:hover { background:#252525; }
     </style>
 </head>
 <body>
@@ -36,282 +37,66 @@
     <table>
         <thead>
             <tr>
-                <th>Key</th>
-                <th>Default</th>
-                <th>Description</th>
+                <th width="30%">Property Key</th>
+                <th width="10%">Default</th>
+                <th width="60%">Description / Behavior</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td class="key">DeadfallBaitStolenPercent</td>
-                <td class="default">10</td>
-                <td class="desc">Percentage chance that a deadfall will have its bait stolen and inflict no damage.</td>
-            </tr>
-            <tr>
-                <td class="key">DeadfallMaxAnimalHeight</td>
-                <td class="default">0.7</td>
-                <td class="desc">Entities with this eye height or less can be seriously damaged (foxes or smaller).</td>
-            </tr>
-            <tr>
-                <td class="key">DeadfallMaxDamageSet</td>
-                <td class="default">10</td>
-                <td class="desc">Maximum damage inflicted by an unbaited (set) deadfall.</td>
-            </tr>
-            <tr>
-                <td class="key">DeadfallMaxDamageBaited</td>
-                <td class="default">20</td>
-                <td class="desc">Maximum damage inflicted by a baited deadfall.</td>
-            </tr>
-            <tr>
-                <td class="key">DeadfallTrippedPercent</td>
-                <td class="default">10</td>
-                <td class="desc">Percentage chance that a deadfall will be tripped and inflict no damage.</td>
-            </tr>
-            <tr>
-                <td class="key">FallDamageMultiplierWoodSpikes</td>
-                <td class="default">25</td>
-                <td class="desc">A damage multiplier applied to wooden spikes.</td>
-            </tr>
-            <tr>
-                <td class="key">FallDamageMultiplierMetalSpikes</td>
-                <td class="default">80</td>
-                <td class="desc">A damage multiplier applied to the bed o' nails.</td>
-            </tr>
-            <tr>
-                <td class="key">FishBasketCatchPercent</td>
-                <td class="default">5</td>
-                <td class="desc">% chance of catching fish in unbaited basket per update interval.</td>
-            </tr>
-            <tr>
-                <td class="key">FishBasketBaitedCatchPercent</td>
-                <td class="default">10</td>
-                <td class="desc">% chance of catching fish in baited basket per update interval.</td>
-            </tr>
-            <tr>
-                <td class="key">FishBasketBaitStolenPercent</td>
-                <td class="default">5</td>
-                <td class="desc">% chance that bait will be stolen from a fish basket.</td>
-            </tr>
-            <tr>
-                <td class="key">FishBasketEscapePercent</td>
-                <td class="default">15</td>
-                <td class="desc">% chance that a fish will escape from a fish basket.</td>
-            </tr>
-            <tr>
-                <td class="key">FishBasketUpdateMinutes</td>
-                <td class="default">2.2</td>
-                <td class="desc">Real life minutes until fish baskets are potentially updated.</td>
-            </tr>
-            <tr>
-                <td class="key">FishBasketRotRemovedPercent</td>
-                <td class="default">10</td>
-                <td class="desc">% chance that rot will be removed from a fish basket.</td>
-            </tr>
-            <tr>
-                <td class="key">FishChanceOfEggsPercent</td>
-                <td class="default">20</td>
-                <td class="desc">% chance of getting eggs when filleting a fish.</td>
-            </tr>
-            <tr>
-                <td class="key">FishChunkDepletionRate</td>
-                <td class="default">10</td>
-                <td class="desc">Catch probability reduction per fish caught in a chunk.</td>
-            </tr>
-            <tr>
-                <td class="key">FishChunkRepletionRate</td>
-                <td class="default">1</td>
-                <td class="desc">% chunk repletion per repletion interval.</td>
-            </tr>
-            <tr>
-                <td class="key">FishChunkRepletionMinutes</td>
-                <td class="default">20</td>
-                <td class="desc">Real life minutes before a chunk is repleted with fish.</td>
-            </tr>
-            <tr>
-                <td class="key">FishEggsChunkRepletionRate</td>
-                <td class="default">10</td>
-                <td class="desc">Repletion % increase when dropping fertile fish eggs.</td>
-            </tr>
-            <tr>
-                <td class="key">FishChunkMaxDepletionPercent</td>
-                <td class="default">95</td>
-                <td class="desc">Maximum % amount that a chunk can be depleted.</td>
-            </tr>
-            <tr>
-                <td class="key">FurrowedLandUpdateFrequency</td>
-                <td class="default">120</td>
-                <td class="desc">How often (seconds) furrowed land waters neighbors.</td>
-            </tr>
-            <tr>
-                <td class="key">FurrowedLandBlockageChancePercent</td>
-                <td class="default">0.05</td>
-                <td class="desc">% chance of a blockage forming in furrowed land.</td>
-            </tr>
-            <tr>
-                <td class="key">FurrowedLandEnabled</td>
-                <td class="default">true</td>
-                <td class="desc">Allow hoe to create furrowed land.</td>
-            </tr>
-            <tr>
-                <td class="key">FurrowedLandMinMoistureClose</td>
-                <td class="default">0.85</td>
-                <td class="desc">Max moisture % of farmland adjacent to a furrow.</td>
-            </tr>
-            <tr>
-                <td class="key">FurrowedLandMinMoistureFar</td>
-                <td class="default">0.6</td>
-                <td class="desc">Max moisture % of farmland two blocks from a furrow.</td>
-            </tr>
-            <tr>
-                <td class="key">LimbTrotlineCatchPercent</td>
-                <td class="default">1</td>
-                <td class="desc">% chance of catch on an unbaited/unlured hook.</td>
-            </tr>
-            <tr>
-                <td class="key">LimbTrotlineBaitedCatchPercent</td>
-                <td class="default">3</td>
-                <td class="desc">% chance of catch on a baited hook.</td>
-            </tr>
-            <tr>
-                <td class="key">LimbTrotlineLuredCatchPercent</td>
-                <td class="default">3</td>
-                <td class="desc">% chance of catch on a lured hook.</td>
-            </tr>
-            <tr>
-                <td class="key">LimbTrotlineBaitedLuredCatchPercent</td>
-                <td class="default">6</td>
-                <td class="desc">% chance of catch on a baited and lured hook.</td>
-            </tr>
-            <tr>
-                <td class="key">LimbTrotlineBaitStolenPercent</td>
-                <td class="default">5</td>
-                <td class="desc">% chance of bait being stolen from the hook.</td>
-            </tr>
-            <tr>
-                <td class="key">LimbTrotlineUpdateMinutes</td>
-                <td class="default">2.4</td>
-                <td class="desc">Real life minutes until limb/trotlines are potentially updated.</td>
-            </tr>
-            <tr>
-                <td class="key">LimbTrotlineRotRemovedPercent</td>
-                <td class="default">10</td>
-                <td class="desc">% chance that rot on the hook will be removed.</td>
-            </tr>
-            <tr>
-                <td class="key">MonkeyBridgeMaxLength</td>
-                <td class="default">120</td>
-                <td class="desc">Default max length of the monkey bridge.</td>
-            </tr>
-            <tr>
-                <td class="key">RaftEnabled</td>
-                <td class="default">true</td>
-                <td class="desc">Toggle the Primitive Survival raft.</td>
-            </tr>
-            <tr>
-                <td class="key">RaftWaterSpeedModifier</td>
-                <td class="default">0.1</td>
-                <td class="desc">Multiplier that determines the speed of a raft.</td>
-            </tr>
-            <tr>
-                <td class="key">RaftFlotationModifier</td>
-                <td class="default">0.025</td>
-                <td class="desc">How fast the raft accelerates to the surface (buoyancy).</td>
-            </tr>
-            <tr>
-                <td class="key">ShowModNameInHud</td>
-                <td class="default">true</td>
-                <td class="desc">Show the name of this mod in the HUD.</td>
-            </tr>
-            <tr>
-                <td class="key">ShowModNameInGuis</td>
-                <td class="default">false</td>
-                <td class="desc">Show the name of this mod in GUI popups.</td>
-            </tr>
-            <tr>
-                <td class="key">SnareBaitStolenPercent</td>
-                <td class="default">10</td>
-                <td class="desc">% chance that a snare will have its bait stolen.</td>
-            </tr>
-            <tr>
-                <td class="key">SnareMaxAnimalHeight</td>
-                <td class="default">0.8</td>
-                <td class="desc">Entities with this eye height or less are affected (pigs or smaller).</td>
-            </tr>
-            <tr>
-                <td class="key">SnareMaxDamageSet</td>
-                <td class="default">12</td>
-                <td class="desc">Maximum damage inflicted by an unbaited snare.</td>
-            </tr>
-            <tr>
-                <td class="key">SnareMaxDamageBaited</td>
-                <td class="default">24</td>
-                <td class="desc">Maximum damage inflicted by a baited snare.</td>
-            </tr>
-            <tr>
-                <td class="key">SnareTrippedPercent</td>
-                <td class="default">10</td>
-                <td class="desc">% chance that a snare will be tripped with no damage.</td>
-            </tr>
-            <tr>
-                <td class="key">SpawnMultiplierBioluminescentGlobe</td>
-                <td class="default">1.0</td>
-                <td class="desc">Bioluminescent spawn rate multiplier.</td>
-            </tr>
-            <tr>
-                <td class="key">TreeHollowsMaxItems</td>
-                <td class="default">8</td>
-                <td class="desc">Maximum items that can be found in a tree hollow.</td>
-            </tr>
-            <tr>
-                <td class="key">TreeHollowsEnableDeveloperTools</td>
-                <td class="default">false</td>
-                <td class="desc">Enable to help with adding new items to tree hollows.</td>
-            </tr>
-            <tr>
-                <td class="key">TreeHollowsMaxPerChunk</td>
-                <td class="default">1</td>
-                <td class="desc">Maximum spawn count of tree hollows in new chunks.</td>
-            </tr>
-            <tr>
-                <td class="key">TreeHollowsSpawnProbability</td>
-                <td class="default">0.15</td>
-                <td class="desc">Probability of a tree hollow to spawn in a new chunk.</td>
-            </tr>
-            <tr>
-                <td class="key">TreeHollowsUpdateMinutes</td>
-                <td class="default">360.0</td>
-                <td class="desc">How often the contents of a tree hollow is replenished.</td>
-            </tr>
-            <tr>
-                <td class="key">WeirTrapCatchPercent</td>
-                <td class="default">2</td>
-                <td class="desc">Percentage chance of catching a fish in a weir trap.</td>
-            </tr>
-            <tr>
-                <td class="key">WeirTrapEscapePercent</td>
-                <td class="default">15</td>
-                <td class="desc">Percentage chance that something in a weir trap will escape.</td>
-            </tr>
-            <tr>
-                <td class="key">WeirTrapUpdateMinutes</td>
-                <td class="default">5.0</td>
-                <td class="desc">Real life minutes until weir traps are potentially updated.</td>
-            </tr>
-            <tr>
-                <td class="key">WeirTrapRotRemovedPercent</td>
-                <td class="default">10</td>
-                <td class="desc">Percentage chance that rot in a weir trap will be removed.</td>
-            </tr>
-            <tr>
-                <td class="key">WormFoundPercentRock</td>
-                <td class="default">1</td>
-                <td class="desc">Chance of finding a worm when picking up a rock.</td>
-            </tr>
-            <tr>
-                <td class="key">WormFoundPercentStickFlint</td>
-                <td class="default">10</td>
-                <td class="desc">Chance of finding a worm when picking up a stick or flint.</td>
-            </tr>
+            <tr><td class="key">DeadfallBaitStolenPercent</td><td><span class="default">10</span></td><td class="desc">Percentage chance that a deadfall will have its bait stolen and inflict no damage.</td></tr>
+            <tr><td class="key">DeadfallMaxAnimalHeight</td><td><span class="default">0.7</span></td><td class="desc">Entities with this eye height or less can be seriously damaged (foxes or smaller).</td></tr>
+            <tr><td class="key">DeadfallMaxDamageSet</td><td><span class="default">10</span></td><td class="desc">Maximum damage inflicted by an unbaited (set) deadfall.</td></tr>
+            <tr><td class="key">DeadfallMaxDamageBaited</td><td><span class="default">20</span></td><td class="desc">Maximum damage inflicted by a baited deadfall.</td></tr>
+            <tr><td class="key">DeadfallTrippedPercent</td><td><span class="default">10</span></td><td class="desc">Percentage chance that a deadfall will be tripped and inflict no damage.</td></tr>
+            <tr><td class="key">FallDamageMultiplierWoodSpikes</td><td><span class="default">25</span></td><td class="desc">A damage multiplier applied to wooden spikes.</td></tr>
+            <tr><td class="key">FallDamageMultiplierMetalSpikes</td><td><span class="default">80</span></td><td class="desc">A damage multiplier applied to the bed o' nails.</td></tr>
+            <tr><td class="key">FishBasketCatchPercent</td><td><span class="default">5</span></td><td class="desc">% chance of catching fish in unbaited basket per update interval.</td></tr>
+            <tr><td class="key">FishBasketBaitedCatchPercent</td><td><span class="default">10</span></td><td class="desc">% chance of catching fish in baited basket per update interval.</td></tr>
+            <tr><td class="key">FishBasketBaitStolenPercent</td><td><span class="default">5</span></td><td class="desc">% chance that bait will be stolen from a fish basket.</td></tr>
+            <tr><td class="key">FishBasketEscapePercent</td><td><span class="default">15</span></td><td class="desc">% chance that a fish will escape from a fish basket.</td></tr>
+            <tr><td class="key">FishBasketUpdateMinutes</td><td><span class="default">2.2</span></td><td class="desc">Real life minutes until fish baskets are potentially updated.</td></tr>
+            <tr><td class="key">FishBasketRotRemovedPercent</td><td><span class="default">10</span></td><td class="desc">% chance that rot will be removed from a fish basket.</td></tr>
+            <tr><td class="key">FishChanceOfEggsPercent</td><td><span class="default">20</span></td><td class="desc">% chance of getting eggs when filleting a fish.</td></tr>
+            <tr><td class="key">FishChunkDepletionRate</td><td><span class="default">10</span></td><td class="desc">Catch probability reduction per fish caught in a chunk.</td></tr>
+            <tr><td class="key">FishChunkRepletionRate</td><td><span class="default">1</span></td><td class="desc">% chunk repletion per repletion interval.</td></tr>
+            <tr><td class="key">FishChunkRepletionMinutes</td><td><span class="default">20</span></td><td class="desc">Real life minutes before a chunk is repleted with fish.</td></tr>
+            <tr><td class="key">FishEggsChunkRepletionRate</td><td><span class="default">10</span></td><td class="desc">Repletion % increase when dropping fertile fish eggs.</td></tr>
+            <tr><td class="key">FishChunkMaxDepletionPercent</td><td><span class="default">95</span></td><td class="desc">Maximum % amount that a chunk can be depleted.</td></tr>
+            <tr><td class="key">FurrowedLandUpdateFrequency</td><td><span class="default">120</span></td><td class="desc">How often (seconds) furrowed land waters neighbors.</td></tr>
+            <tr><td class="key">FurrowedLandBlockageChancePercent</td><td><span class="default">0.05</span></td><td class="desc">% chance of a blockage forming in furrowed land.</td></tr>
+            <tr><td class="key">FurrowedLandEnabled</td><td><span class="default">true</span></td><td class="desc">Allow hoe to create furrowed land.</td></tr>
+            <tr><td class="key">FurrowedLandMinMoistureClose</td><td><span class="default">0.85</span></td><td class="desc">Max moisture % of farmland adjacent to a furrow.</td></tr>
+            <tr><td class="key">FurrowedLandMinMoistureFar</td><td><span class="default">0.6</span></td><td class="desc">Max moisture % of farmland two blocks from a furrow.</td></tr>
+            <tr><td class="key">LimbTrotlineCatchPercent</td><td><span class="default">1</span></td><td class="desc">% chance of catch on an unbaited/unlured hook.</td></tr>
+            <tr><td class="key">LimbTrotlineBaitedCatchPercent</td><td><span class="default">3</span></td><td class="desc">% chance of catch on a baited hook.</td></tr>
+            <tr><td class="key">LimbTrotlineLuredCatchPercent</td><td><span class="default">3</span></td><td class="desc">% chance of catch on a lured hook.</td></tr>
+            <tr><td class="key">LimbTrotlineBaitedLuredCatchPercent</td><td><span class="default">6</span></td><td class="desc">% chance of catch on a baited and lured hook.</td></tr>
+            <tr><td class="key">LimbTrotlineBaitStolenPercent</td><td><span class="default">5</span></td><td class="desc">% chance of bait being stolen from the hook.</td></tr>
+            <tr><td class="key">LimbTrotlineUpdateMinutes</td><td><span class="default">2.4</span></td><td class="desc">Real life minutes until limb/trotlines are potentially updated.</td></tr>
+            <tr><td class="key">LimbTrotlineRotRemovedPercent</td><td><span class="default">10</span></td><td class="desc">% chance that rot on the hook will be removed.</td></tr>
+            <tr><td class="key">MonkeyBridgeMaxLength</td><td><span class="default">120</span></td><td class="desc">Default max length of the monkey bridge.</td></tr>
+            <tr><td class="key">RaftEnabled</td><td><span class="default">true</span></td><td class="desc">Toggle the Primitive Survival raft.</td></tr>
+            <tr><td class="key">RaftWaterSpeedModifier</td><td><span class="default">0.1</span></td><td class="desc">Multiplier that determines the speed of a raft.</td></tr>
+            <tr><td class="key">RaftFlotationModifier</td><td><span class="default">0.025</span></td><td class="desc">How fast the raft accelerates to the surface (buoyancy).</td></tr>
+            <tr><td class="key">ShowModNameInHud</td><td><span class="default">true</span></td><td class="desc">Show the name of this mod in the HUD.</td></tr>
+            <tr><td class="key">ShowModNameInGuis</td><td><span class="default">false</span></td><td class="desc">Show the name of this mod in GUI popups.</td></tr>
+            <tr><td class="key">SnareBaitStolenPercent</td><td><span class="default">10</span></td><td class="desc">% chance that a snare will have its bait stolen.</td></tr>
+            <tr><td class="key">SnareMaxAnimalHeight</td><td><span class="default">0.8</span></td><td class="desc">Entities with this eye height or less are affected (pigs or smaller).</td></tr>
+            <tr><td class="key">SnareMaxDamageSet</td><td><span class="default">12</span></td><td class="desc">Maximum damage inflicted by an unbaited snare.</td></tr>
+            <tr><td class="key">SnareMaxDamageBaited</td><td><span class="default">24</span></td><td class="desc">Maximum damage inflicted by a baited snare.</td></tr>
+            <tr><td class="key">SnareTrippedPercent</td><td><span class="default">10</span></td><td class="desc">% chance that a snare will be tripped with no damage.</td></tr>
+            <tr><td class="key">SpawnMultiplierBioluminescentGlobe</td><td><span class="default">1.0</span></td><td class="desc">Bioluminescent spawn rate multiplier.</td></tr>
+            <tr><td class="key">TreeHollowsMaxItems</td><td><span class="default">8</span></td><td class="desc">Maximum items that can be found in a tree hollow.</td></tr>
+            <tr><td class="key">TreeHollowsEnableDeveloperTools</td><td><span class="default">false</span></td><td class="desc">Enable to help with adding new items to tree hollows.</td></tr>
+            <tr><td class="key">TreeHollowsMaxPerChunk</td><td><span class="default">1</span></td><td class="desc">Maximum spawn count of tree hollows in new chunks.</td></tr>
+            <tr><td class="key">TreeHollowsSpawnProbability</td><td><span class="default">0.15</span></td><td class="desc">Probability of a tree hollow to spawn in a new chunk.</td></tr>
+            <tr><td class="key">TreeHollowsUpdateMinutes</td><td><span class="default">360.0</span></td><td class="desc">How often the contents of a tree hollow is replenished.</td></tr>
+            <tr><td class="key">WeirTrapCatchPercent</td><td><span class="default">2</span></td><td class="desc">Percentage chance of catching a fish in a weir trap.</td></tr>
+            <tr><td class="key">WeirTrapEscapePercent</td><td><span class="default">15</span></td><td class="desc">Percentage chance that something in a weir trap will escape.</td></tr>
+            <tr><td class="key">WeirTrapUpdateMinutes</td><td><span class="default">5.0</span></td><td class="desc">Real life minutes until weir traps are potentially updated.</td></tr>
+            <tr><td class="key">WeirTrapRotRemovedPercent</td><td><span class="default">10</span></td><td class="desc">Percentage chance that rot in a weir trap will be removed.</td></tr>
+            <tr><td class="key">WormFoundPercentRock</td><td><span class="default">1</span></td><td class="desc">Chance of finding a worm when picking up a rock.</td></tr>
+            <tr><td class="key">WormFoundPercentStickFlint</td><td><span class="default">10</span></td><td class="desc">Chance of finding a worm when picking up a stick or flint.</td></tr>
         </tbody>
     </table>
 
