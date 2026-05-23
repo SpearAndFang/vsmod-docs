@@ -92,7 +92,7 @@ tfoot td { background: #1e1e1e; color: #e5981a; font-size: 18px; font-weight: bo
 .custom-accordion .description {
   font-size: 15px;
   color: #cccccc;
-  margin-left: 10px;
+  margin: 20px 10px 30px 10px;
 }
 
 .custom-accordion .content-wrapper {

@@ -10,46 +10,202 @@
 
 <div class="container">
     <div class="sticky-header">
-    <div class="header-content">
-        <div class="header-left">
-            <img class="mod-logo" src="https://i.ibb.co/FLrHk1Lm/modicon.png" alt="modicon">
-            <h1 class="mod-title">Troubleshooting</h1>
+        <div class="header-content">
+            <div class="header-left">
+                <img class="mod-logo" src="https://i.ibb.co/Y7d8bKfD/troubleshooting.png" alt="modicon">
+                <h1 class="mod-title">Vintage Story Mods</h1>
+            </div>
+            
+            <a href="https://vintagestory.at" onclick="window.close();" class="back-btn">
+                &larr; CLOSE AND RETURN TO MODDB
+            </a>
         </div>
-        
-        <a href="https://vintagestory.at" onclick="window.close();" class="back-btn">
-            &larr; CLOSE AND RETURN TO MODDB
-        </a>
+
+        <div class="table-section-title">
+            Troubleshooting
+        </div>
     </div>
 
-     <div class="table-section-title">
-        Language Support
-    </div>
-
-    <table>
-        <thead>
-            <tr>
-                <th class="col4">Country</th>
-                <th class="col5">Language</th>
-                <th class="col6">Credits</th>
-            </tr>
-        </thead>
-    </table>
-
-    </div>
-
-    <!-- first issue -->
-    <details class="custom-accordion">
-        <summary>Category 2</summary>
+    <!-- Backup -->
+    <details class="custom-accordion" open>
+        <summary>Did I mention backups?</summary>
         <div class="spacer">&nbsp;</div>
-        <br />
-        <p class="description">This extra section is hidden by default. The triangle arrow automatically rotates downward when you click the header text.</p>
-        <br />
-        <div class="content-wrapper">
-        <p class="pro-tip">
-            <strong>💡 Pro Tip:</strong> You'll see the content created in the WYSIWYG-HTML editor in 
-            <span class="code-snippet">&lt;source code&gt;</span> format on the right.
+        <p class="description">
+            If you don't want to risk corrupting your world or make things even worse, make a manual backup first.
         </p>
+        <p class="description">
+            From the in game Mod Manager, click on "Open Mods Folder" and then exit the game.  Go up one folder level and into the "Saves" folder. Identify your world by name and maybe datestamp, then copy it to a safe location.
+        </p>
+    </details>
+
+    <!-- Versions -->
+    <details class="custom-accordion" open>
+        <summary>Make sure that  your game version matches your mod version.</summary>
+        <div class="spacer">&nbsp;</div>
+        <p class="description">
+            On a mod page, the "Files" tab typically lists many different releases of a mod available for download.
+        </p>
+        <p class="description">
+            It is important to know what game version you are running, and then to download the most appropriate mod version. As a general rule, major releases are compatible.  So for game version 1.22.x, a mod that says "For Game verion" 1.22.x is going to work.
+        </p>
+
+        <!--
+        <div class="content-wrapper">
+            <p class="pro-tip">
+                <strong>💡 Pro Tip:</strong> You'll see the content created in the WYSIWYG-HTML editor in 
+                <span class="code-snippet">&lt;source code&gt;</span> format on the right.
+            </p>
         </div>
+        -->
+    </details>
+
+    <!-- Cache -->
+    <details class="custom-accordion" open>
+        <summary>After making changes to your mod loadout, exit the game completely and clear the cache.</summary>
+        <div class="spacer">&nbsp;</div>
+        <p class="description">
+            Exiting the game completely will ensure that memory is freed. You can also clear the cache at any time and this can fix a variety of issues. 
+        </p>
+        <p class="description">
+            From the in game Mod Manager, click on "Open Mods Folder" and then exit the game.  Go up one folder level and into the "Cache" folder. Delete everything in there.
+        </p>
+    </details>
+
+    <!-- Mod Clean Up -->
+    <details class="custom-accordion" open>
+        <summary>Clean up your mods.</summary>
+        <div class="spacer">&nbsp;</div>
+        <p class="description">
+            Some strange things can happen when managing your loadout entirely from the in-game mod manager, so don't do that. It's generally ok for quick changes but things can go south in a hurry.
+        </p>
+        <p class="description">
+            <ol>
+                <li>From the in-game Mod Manager, click "Open Mods Folder". Exit the game.</li>
+                <li>Ensure there's only one copy of each mod in the mods folder - delete all others.</li>
+                <li>Since you are here, go up one folder level and go into the "Cache" folder. Delete everything inside that folder.</li>
+                <li>Go up one folder level and go into the "ModConfig" folder. Delete the "primitivesurvival119.json" file inside that folder.</li>
+                <li>Start the game, go back into the Mod Manager, and click the "Reload mods" button. Make sure that the mods are enabled.</li>
+            </ol>
+        </p>
+        <p class="description">
+            <i>
+                Note: I never recommend disabling mods via the in-game Mod Manager - Open the Mods Folder and remove the disabled mod(s) completely from that folder.
+            </i>
+            <br/><br/>
+            <i>
+                Note 2: Don't unzip any mods. Just drop them in your mods folder zipped.
+            </i>
+        </p>
+    </details>
+
+    <!-- Texture Atlas -->
+    <details class="custom-accordion" open>
+        <summary>Missing or incorrect textures in game?  This might be why.</summary>
+        <div class="spacer">&nbsp;</div>
+        <p class="description">
+            If your game's texture atlases are too small all kinds of problems can crop up, from things in game having wrong textures to invisible blocks to the game crashing.
+            <br /><br />
+            Pick ONE method below:
+            <br /><br />
+            METHOD 1: Have the person that is experiencing the problem run these two commands in game (and then restart their game):
+            <br /><br />
+            <code>.clientconfig maxTextureAtlasWidth 8192</code><br />
+            <code>.clientconfig maxTextureAtlasHeight 8192</code><br />
+            <br /><br />
+            METHOD 2: Have the person that is experiencing the problem edit their %AppData%/Roaming/VintagestoryData/clientsettings.json file and change these two settings to something like:
+            <br/><br />
+            <code>"maxTextureAtlasWidth" : 8192,</code><br />
+            <code>"maxTextureAtlasHeight" : 8192,</code><br />
+        </p>
+    </details>
+
+    <!-- Reinstall the game -->
+    <details class="custom-accordion" open>
+        <summary>It never hurts to reinstall the game.</summary>
+        <div class="spacer">&nbsp;</div>
+        <p class="description">
+            On rare occasions, the game has become corrupted and needs to be reinstalled. Simply re-run the installer and reinstall it. Only takes a minute.
+        </p>
+        <p class="description">
+            This is even more effective if you download and install the full game version from the client area.
+            <br/><br/>
+            <a href="https://account.vintagestory.at/" target="_blank">https://account.vintagestory.at/</a>
+        </p>
+    </details>
+
+    <!-- Log files. -->
+    <details class="custom-accordion" open>
+        <summary>Review your log files.</summary>
+        <div class="spacer">&nbsp;</div>
+        <p class="description">
+            The log files can reveal a lot about what's gone wrong.
+        </p>
+        <p class="description">
+            From the in game Mod Manager, click on "Open Mods Folder" and then exit the game.  Go up one folder level and into the "Logs" folder. The most important logs to review are client-main.log and server-main.log.
+        </p>
+        <p class="description">
+            Focus on lines that start with [Fatal] or [Error] or [Warning].  They often also list the modid of the mod that is associated with the issue.  Now in the case of warnings or errors, they don't necessarily mean that the mod in question is causing a problem, but ideally you don't want to see any such messages in your log files.
+        </p>
+    </details>
+
+    <!-- Divide and Conquer -->
+    <details class="custom-accordion" open>
+        <summary>Suspect a mod conflict? Divide and conquer!</summary>
+        <div class="spacer">&nbsp;</div>
+        <p class="description">
+            This is often also referred to as a binary search, and is often the quickest way to get to the root of such problems.
+        </p>
+        <p class="description">
+            The wiki explains this procedure well enough.  Just follow this link to read all about it.
+            <br/><br/>
+            <a href="https://wiki.vintagestory.at/Troubleshooting_Mods#Compatible_Mods" target="_blank">https://wiki.vintagestory.at/Troubleshooting_Mods#Compatible_Mods</a>
+            
+        </p>
+    </details>
+
+    <!-- Performance -->
+    <details class="custom-accordion" open>
+        <summary>Performance issues? Lagging? Memory leaks?</summary>
+        <div class="spacer">&nbsp;</div>
+        <p class="description">
+            These topics is well beyond the scope of this document. Below is some rambling from one of the game developers (RadFast) and myself.  Good luck!
+        </p>
+        <p class="description">
+            <ul>
+                <li>Do you have plenty of RAM? 32GB recommended on the client for heavily modded.</li>
+                <li>Do you have a modern CPU and GPU?</li>
+            </ul>
+        </p>
+        <p class="description">
+            Let's try a few obvious things first.
+            <ul>
+                <li>Make sure you have no other software or apps running on the PC, except absolute essentials.</li>
+                <li>Check only one copy of Vintagestory.exe is running - use the Task Manager (Ctrl + Shift + Esc), list all processes in alphabetical order and check there is only one Vintagestory process.</li>
+                <li>If there is any exotic hardware connected (anything except mouse, keyboard, monitor, and speakers) disconnect it while testing.</li>
+                <li>Post a screenshot of your Graphics settings. Choose the "Medium" preset for testing, that should not stress the GPU at all. But click on "show all available settings" and choose "Max FPS: unlimited" and "VSync: off", while we are testing.</li>
+                <li>Check the PC is not overheating: if you built it yourself, are you sure CPU and GPU are well ventilated; make sure vents are not covered. Use a free tool like OpenHardwareMonitor to check the temperatures.</li>
+                <li>Reinstall the game, making sure to delete everything in the existing install folder (the Windows installer should automatically do it correctly).</li>
+            </ul>
+        </p>
+        <p class="description">
+            If you still have the issue after trying the six things above, then next thing to try is:  use the in-game performance monitor command .debug logticks 50. Play the game until the freezes start to occur. Then exit and post here the new client-main.log. What that command does is log in client-main.log any tick when the frame rate drops below 20 frames per second, together with detailed trace information which will make sense only to some people like the game devs.
+            <br/><br/>
+            Another helpful link:
+            <br/><br/>
+            <a href="https://wiki.vintagestory.at/Framerate_and_Performance" target="_blank">https://wiki.vintagestory.at/Framerate_and_Performance</a>
+            <br/><br/>
+            <b>One more final thought - if you suspect a ram issue, know that it is best to exit the game completely when changing the mod loadout.</b>
+            <br/><br/>
+            Some mods that may help with such issues:
+            <br/><br/>
+            <a href="https://mods.vintagestory.at/show/mod/28325" target="_blank">https://mods.vintagestory.at/show/mod/28325</a>
+            <br/><br/>
+            <a href="https://mods.vintagestory.at/optitime" target="_blank">https://mods.vintagestory.at/optitime</a>
+            <br/><br/>
+            <a href="https://mods.vintagestory.at/tungsten" target="_blank">https://mods.vintagestory.at/tungsten</a>
+            <br/><br/>
+            <a href="https://mods.vintagestory.at/adaptivegraphics" target="_blank">https://mods.vintagestory.at/adaptivegraphics</a>
+        </p>
     </details>
 
 </div>
